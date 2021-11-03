@@ -11,7 +11,8 @@
     "pre-commit": "npm run lint",
     "pre-push": "npm test",
     "post-merge": "npm install",
-    "post-rewrite": "npm install"
+    "post-rewrite": "npm install",
+    "prepare": "husky install"
   },
   "author": "",
   "license": "ISC",
@@ -39,11 +40,16 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.1",
     "eslint-plugin-react": "^7.26.1",
-    "husky": "^7.0.4",
+    "husky": "^7.0.0",
     "jest": "^27.3.1",
+    "lint-staged": "^11.2.6",
     "prettier": "^2.4.1",
     "ts-jest": "^27.0.7",
     "typescript": "^4.4.4",
     "vite": "^2.6.13"
+  },
+  "lint-staged": {
+    "*.{tsx,ts}": "eslint --cache --fix src",
+    "*.{js,css,md}": "prettier --write"
   }
 }
