@@ -13,4 +13,8 @@ test('Changing button color with input', async () => {
 
   const colorBtn = app.queryByLabelText('colorBtn')
   expect(colorBtn).toHaveStyle({ backgroundColor: 'blue' })
+
+  fireEvent.change(input, { target: { value: 'lightblue' } })
+  changeColorBtn!!.click()
+  expect(colorBtn).toHaveStyle({ backgroundColor: 'lightblue' })
 })
