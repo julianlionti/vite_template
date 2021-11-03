@@ -17,4 +17,9 @@ test('Changing button color with input', async () => {
   fireEvent.change(input, { target: { value: 'lightblue' } })
   changeColorBtn!!.click()
   expect(colorBtn).toHaveStyle({ backgroundColor: 'lightblue' })
+
+  fireEvent.change(input, { target: { value: 'white' } })
+  fireEvent.keyPress(input, { key: 'Enter', code: 'Enter', charCode: 13 })
+
+  expect(colorBtn).toHaveStyle({ backgroundColor: 'white' })
 })

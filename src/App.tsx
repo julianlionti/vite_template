@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { ChangeEvent, useState } from 'react'
+import { ChangeEvent, KeyboardEvent, useCallback, useState } from 'react'
 import { Button } from './components/Button'
 import { Space } from './components/Space'
 
@@ -11,9 +11,19 @@ const App = () => {
   const [colorInput, setColorInput] = useState('')
   const [color, setColor] = useState('')
 
-  const handleClick = () => setColor(colorInput)
-  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) =>
-    setColorInput(event.target.value)
+  const handleClick = useCallback(() => setColor(colorInput), [colorInput])
+
+  const handleInputChange = (ev: ChangeEvent<HTMLInputElement>) =>
+    setColorInput(ev.target.value)
+
+  const handleKeyPress = useCallback(
+    (ev: KeyboardEvent<HTMLInputElement>) => {
+      if (ev.key === 'Enter') {
+        handleClick()
+      }
+    },
+    [handleClick]
+  )
 
   return (
     <div>
@@ -24,6 +34,7 @@ const App = () => {
           aria-label="colorInput"
           value={colorInput}
           onChange={handleInputChange}
+          onKeyPress={handleKeyPress}
           placeholder="color name or hexa"
         />
         <Space />
