@@ -1,7 +1,7 @@
 import App from '../App'
 import { render, fireEvent } from '@testing-library/react'
 
-test('loads and displays greeting', async () => {
+test('Changing button color with input', async () => {
   const app = render(<App />)
 
   const input = app.queryByLabelText('colorInput') as HTMLInputElement
@@ -12,7 +12,5 @@ test('loads and displays greeting', async () => {
   changeColorBtn!!.click()
 
   const colorBtn = app.queryByLabelText('colorBtn')
-  expect(colorBtn).toHaveStyle({
-    backgroundColor: 'blue',
-  })
+  expect(colorBtn).toHaveStyle({ backgroundColor: 'blue' })
 })
