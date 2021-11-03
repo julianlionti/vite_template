@@ -1,6 +1,4 @@
 import styled from '@emotion/styled'
-import React from 'react'
-
 
 type Props = Partial<{ isVert: boolean }>
 export const Space = styled.div<Props>`
