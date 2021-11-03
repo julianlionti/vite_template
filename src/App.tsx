@@ -9,7 +9,7 @@ const HorizontalDiv = styled.div`
 
 const App = () => {
   const [colorInput, setColorInput] = useState('')
-  const [color, setColor] = useState('')
+  const [, setColor] = useState('')
 
   const handleClick = () => setColor(colorInput)
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) =>
@@ -32,9 +32,7 @@ const App = () => {
         </Button>
       </HorizontalDiv>
       <p>Styled Button:</p>
-      <Button aria-label="colorBtn" bgColor={color}>
-        Click me
-      </Button>
+      <Button aria-label="colorBtn">Click me</Button>
     </div>
   )
 }
