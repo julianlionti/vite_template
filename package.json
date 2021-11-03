@@ -7,7 +7,6 @@
     "start": "vite",
     "test": "jest",
     "test:watch": "jest --watch",
-    "lint": "eslint --ext .tsx,.ts src",
     "prepare": "husky install"
   },
   "author": "",
@@ -45,6 +44,6 @@
     "vite": "^2.6.13"
   },
   "lint-staged": {
-    "*.{tsx,ts}": "eslint --cache --fix"
+    "*.{tsx,ts}": ["prettier --write", "eslint --cache --fix"]
   }
 }
