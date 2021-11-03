@@ -13,6 +13,6 @@ test('loads and displays greeting', async () => {
 
   const colorBtn = app.queryByLabelText('colorBtn')
   expect(colorBtn).toHaveStyle({
-    backgroundColor: 'lightblue',
+    backgroundColor: 'blue',
   })
 })
