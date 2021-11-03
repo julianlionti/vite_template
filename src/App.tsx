@@ -35,6 +35,9 @@ const App = () => {
       <Button aria-label="colorBtn" bgColor={color}>
         Click me
       </Button>
+      <p>
+        Template for Vite, Jest, Eslint, Prettier, Emotion, Typescript and React
+      </p>
     </div>
   )
 }
