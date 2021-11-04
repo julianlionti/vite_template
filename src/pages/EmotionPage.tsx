@@ -27,7 +27,7 @@ const EmotionPage = () => {
 
   return (
     <div>
-      <p>First Vite App</p>
+      <p>Emotion examples</p>
       <p>Styled no props button:</p>
       <HorizontalDiv>
         <input
